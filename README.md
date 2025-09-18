@@ -1,3 +1,8 @@
+
+<p align="center">
+   <img src="albs.png" alt="AutoLabs Logo" width="100" />
+</p>
+
 # AutoLabs
 
 AutoLabs is a Streamlit-based application for designing, simulating, and evaluating laboratory experiments using AI-powered agents and tagging systems. It supports multi-agent and single-agent workflows, experiment step tagging, and evaluation management.
