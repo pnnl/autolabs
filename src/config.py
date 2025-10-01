@@ -12,32 +12,31 @@ import streamlit as st
 
 load_dotenv()
 
+
 class Client:
     def __init__(self, clinet_type: str):
 
         self.clinet_type = clinet_type
         self.get_client()
 
-        if clinet_type =='unfiltered':
+        if clinet_type == "unfiltered":
             self.get_chat_completions = self.get_chat_completions_gpt_4o
-        elif clinet_type =='reasoning':
+        elif clinet_type == "reasoning":
             self.get_chat_completions = self.get_chat_completions_gpt_4o
 
     def get_client(self):
         self.client = get_resoning_client()
 
-    
     def get_chat_completions_gpt_4o(self, messages):
         with st.sidebar:
-            st.markdown(os.getenv('MODEL'))
+            st.markdown(os.getenv("MODEL"))
         response = self.client.chat.completions.create(
-            model=str(os.getenv('MODEL')),
-            temperature = 0,
+            model=str(os.getenv("MODEL")),
+            temperature=0,
             # tools=tools,
-            messages=messages
-            )
+            messages=messages,
+        )
         return response
-
 
 
 def get_client(clinet_type):
@@ -46,17 +45,15 @@ def get_client(clinet_type):
 
 def get_resoning_client():
     client = OpenAI(
-        
-        api_key=os.getenv("OPENAI_API_KEY"),  
-        base_url=os.getenv("OPENAI_BASE_URL")
+        api_key=os.getenv("OPENAI_API_KEY"), base_url=os.getenv("OPENAI_BASE_URL")
     )
-    print('Reasoning client')
+    print("Reasoning client")
     return client
 
 
 model = ChatOpenAI(
-    model = os.getenv('MODEL'),
-    api_key=os.getenv("OPENAI_API_KEY"),  
+    model=os.getenv("MODEL"),
+    api_key=os.getenv("OPENAI_API_KEY"),
     # api_version=os.getenv("OPENAI_API_VERSION"),
     base_url=os.getenv("OPENAI_BASE_URL"),
     temperature=0,

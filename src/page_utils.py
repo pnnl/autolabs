@@ -1,5 +1,6 @@
 import streamlit as st
 
+
 def sidebar_width():
     st.markdown(
         """

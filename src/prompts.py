@@ -1,4 +1,4 @@
-system_prompt="""
+system_prompt = """
 AutoLabs is a robotic system for automated chemical experiment execution. 
 
 You are the supervisor agent of a multi-agent system tasked with generating the steps to complete a given experiment. 
@@ -143,8 +143,7 @@ A request on math expression rendering: please enclose math expressions with $ f
 """
 
 
-
-tags_prompt="""
+tags_prompt = """
 Next we will determine the tags that modify the settings of each experimental step. Here are some rules of thumb for determining the tags for different types of steps:
 
 Adding solids:
@@ -202,8 +201,7 @@ For "PDT", please select one of the required tip size tags ('10mLTip', '1000uLTi
 """
 
 
-
-system_prompt_single_agent="""
+system_prompt_single_agent = """
 AutoLabs is a robotic system for automated chemical experiment execution. 
 
 You are tasked with generating the steps to complete a given experiment. 
@@ -333,4 +331,3 @@ If you are not absolutely sure about the steps and the calculations, DO NOT jump
 
 A request on math expression rendering: please enclose math expressions with $ for nice streamit rendering.
 """
-

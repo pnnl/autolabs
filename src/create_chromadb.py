@@ -8,27 +8,27 @@ from dotenv import load_dotenv
 load_dotenv()
 API_KEY = os.environ.get("CLOUD_LLM_API_KEY")
 openai_ef = embedding_functions.OpenAIEmbeddingFunction(
-                    api_key=API_KEY,
-                api_base="https://ai-incubator-api.pnnl.gov",
+    api_key=API_KEY,
+    api_base="https://ai-incubator-api.pnnl.gov",
     # model_name="gpt-4o",
-                   # base_url="https://ai-incubator-api.pnnl.gov",
+    # base_url="https://ai-incubator-api.pnnl.gov",
     # model="gpt-4o"
-            )
+)
 
 # sentence_transformer_ef = embedding_functions.SentenceTransformerEmbeddingFunction(model_name='all-mpnet-base-v2')
-chroma_client = chromadb.PersistentClient(path='./data/embeddings/oai_chroma_db')
+chroma_client = chromadb.PersistentClient(path="./data/embeddings/oai_chroma_db")
 collection = chroma_client.get_or_create_collection(
-    name='oai_embeddings',
-    embedding_function=openai_ef)
+    name="oai_embeddings", embedding_function=openai_ef
+)
 
-data = pd.read_pickle('data/finetune/train.pkl') + pd.read_pickle('data/finetune/val.pkl') + \
-pd.read_pickle('data/finetune/test.pkl')
+data = (
+    pd.read_pickle("data/finetune/train.pkl")
+    + pd.read_pickle("data/finetune/val.pkl")
+    + pd.read_pickle("data/finetune/test.pkl")
+)
 
-qs = [i['question'] for i in data]
-ans = [{'steps': i['answer']} for i in data]
-fs = [i['file'] for i in data]
+qs = [i["question"] for i in data]
+ans = [{"steps": i["answer"]} for i in data]
+fs = [i["file"] for i in data]
 
-collection.add(documents=qs,
-              metadatas=ans,
-               ids=fs
-              )
+collection.add(documents=qs, metadatas=ans, ids=fs)

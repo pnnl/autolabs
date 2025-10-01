@@ -11,8 +11,8 @@ from langchain_openai import AzureChatOpenAI
 import streamlit as st
 import logging
 
-logger = logging.getLogger('main_logger')
-logger.info(f'at self_checks.py - streamin = {st.session_state.streaming}')
+logger = logging.getLogger("main_logger")
+logger.info(f"at self_checks.py - streamin = {st.session_state.streaming}")
 
 # validator = Client("reasoning")
 # validator = AzureChatOpenAI(
@@ -21,12 +21,13 @@ logger.info(f'at self_checks.py - streamin = {st.session_state.streaming}')
 #     streaming=st.session_state.streaming,
 #     max_tokens=None,
 #     timeout=st.session_state.timeout,
-#     api_key=os.getenv("AZURE_OPENAI_API_REASONING_KEY"),  
+#     api_key=os.getenv("AZURE_OPENAI_API_REASONING_KEY"),
 #     api_version="2024-12-01-preview",
 #     azure_endpoint="https://autolabs-reasoning.openai.azure.com/openai/deployments/o3-mini/chat/completions?api-version=2024-12-01-preview"
 # )
 
 from .config import model
+
 validator = model
 
 validation_prompt = """
@@ -85,48 +86,52 @@ After performing this review, please return three pieces of information based on
 You are providing the final checks before the commands are sent to the robot, so please be careful and be sure that you have considered all the factors to ensure full correctness.
 """
 
+
 def validate(chat_history, final_steps):
-    
-    chat_history_prompt = '\n\n'.join([f'{message.type.capitalize()}: {message.content}' for message in chat_history ])
-    
+
+    chat_history_prompt = "\n\n".join(
+        [f"{message.type.capitalize()}: {message.content}" for message in chat_history]
+    )
+
     full_prompt = validation_prompt.format(chat_history_prompt)
-    
-    #print('Validation Prompt:')
-    #print(full_prompt)
-    
-    messages=[
-            {"role": "system", "content": full_prompt},
-        ]
-    
+
+    # print('Validation Prompt:')
+    # print(full_prompt)
+
+    messages = [
+        {"role": "system", "content": full_prompt},
+    ]
+
     # response = validator.get_chat_completions(messages)
     response = validator.invoke(messages)
-    
+
     # validator_response = response.choices[0].message.content
     validator_response = response.content
-    
-    print('Validator response:')
+
+    print("Validator response:")
     print(validator_response)
 
-    modify = re.findall(r'<modify>(.+?)</modify>', validator_response)
+    modify = re.findall(r"<modify>(.+?)</modify>", validator_response)
     if len(modify) > 0:
-        modify = modify[0] != 'False'
+        modify = modify[0] != "False"
     else:
         modify = True
 
-
-    reasoning = re.findall(r'<reasoning>(.+?)</reasoning>', validator_response,flags=re.DOTALL)
+    reasoning = re.findall(
+        r"<reasoning>(.+?)</reasoning>", validator_response, flags=re.DOTALL
+    )
     if len(reasoning) > 0:
         reasoning = reasoning[0]
     else:
-        reasoning = ''
+        reasoning = ""
 
-    steps = re.findall(r'<final-steps>(.+?)</final-steps>', validator_response,flags=re.DOTALL)
+    steps = re.findall(
+        r"<final-steps>(.+?)</final-steps>", validator_response, flags=re.DOTALL
+    )
 
     if len(steps) > 0:
-        steps = '<final-steps>' + steps[0] + '</final-steps>'
+        steps = "<final-steps>" + steps[0] + "</final-steps>"
     else:
         steps = final_steps
-    
-    return(modify, reasoning, steps)
-    
 
+    return (modify, reasoning, steps)
