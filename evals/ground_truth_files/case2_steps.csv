@@ -1,0 +1,12 @@
+step,step_type
+Add lithium perchlorate (mg) to vials in Plate 1,chem
+Add lithium tetrafluoroorate (mg) to vials in Plate 1,chem
+Add lithium hexafluorophosphate (mg) to vials in Plate 1,chem
+Add 1% ethylene carbonate (ul) to vials in Plate 1,chem
+Add propylene carbonate (ul) to vials in Plate 1,chem
+Set Cap to vials in Plate 1,proc
+Set StirRate to 700 rpm in Plate 1,proc
+Set HeatingTemp to 40 C in Plate 1,proc
+Set Delay to 30 min in Plate 1,proc
+Set HeatingTemp to 25 C in Plate 1,proc
+Set StirRate to 0 rpm in Plate 1,proc

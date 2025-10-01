@@ -1,0 +1,17 @@
+Add water (ul) to vials in Plate 1
+Add aqueous ammonia (ul) to vials in Plate 1
+Add benzaldehyde (ul) to vials in Plate 1
+Add 1-bromobutane (ul) to vials in Plate 1
+Add 1-iodobutane (ul) to vials in Plate 1
+Add 1-chlorobutane (ul) to vials in Plate 1
+Add 3-bromopropene (ul) to vials in Plate 1
+Add benzyl bromide (ul) to vials in Plate 1
+Add 3-bromobut-1-ene (ul) to vials in Plate 1
+Add 3-bromobut-2-ene (ul) to vials in Plate 1
+Add 2-bromoethyl cyanide (ul) to vials in Plate 1
+Set Cap for vials in Plate 1
+Set StirRate to 700 rpm in Plate 1
+Set HeatingTemp to 60 C in Plate 1
+Set Delay to 480 min in Plate 1
+Set HeatingTemp to 25 C in Plate 1
+Set StirRate to 0 rpm in Plate 1

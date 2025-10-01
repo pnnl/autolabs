@@ -1,0 +1,21 @@
+Add benzoic acid (mg) to vials in Plate 1
+Add water (ul) to vials in Plate 1
+Add acetic acid (ul) to vials in Plate 1
+Add propanoic acid (ul) to vials in Plate 1
+Add methanol (ul) to vials in Plate 1
+Add ethanol (ul) to vials in Plate 1
+Add propanol (ul) to vials in Plate 1
+Add glycerol (ul) to vials in Plate 1
+Add sulfuric acid (ul) to vials in Plate 1
+Set Cap vials in Plate 1
+Set StirRate in Plate 1
+Set HeatingTemp in Plate 1
+Set Delay in Plate 1
+Set HeatingTemp in Plate 1
+Set StirRate in Plate 1
+Add water (ul) to vials in Plate 2
+Discrete transfer from Plate 1 to Plate 2
+Set Cap vials in Plate 2
+Set VortexRate in Plate 2
+Set Delay in Plate 2
+Set VortexRate in Plate 2

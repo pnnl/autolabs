@@ -1,0 +1,14 @@
+steps,step_type
+Add acetic acid (ul) to vials in Plate 1,chem
+Add Methanol (ul) to vials in Plate 1,chem
+Add ethanol (ul) to vials in Plate 1,chem
+Add propanol (ul) to vials in Plate 1,chem
+Add glycerol (ul) to vials in Plate 1,chem
+Add sulfuric acid (ul) to vials in Plate 1,chem
+Add Water (ul) to vials in Plate 1,chem
+Set Cap in vials in Plate 1,proc
+Set HeatingTemp in vials in Plate 2,proc
+Set VialTimers in vials in Plate 1,proc
+Uniform transfer from Plate 1 to Plate 2,proc
+Uniform transfer from Plate 2 to Plate 1,proc
+Set HeatingTemp in vials in Plate 2,proc

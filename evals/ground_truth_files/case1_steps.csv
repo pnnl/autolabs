@@ -1,0 +1,7 @@
+steps,step_type
+Add naphthalene (mg) to Plate 1,chem
+Add methanol (ul) to Plate 1,chem
+Set Cap in Plate 1,proc
+Set VortexRate to 500 in Plate 1,proc
+Set Delay to 10 min in Plate 1,proc
+Set VortexRate to 0 in Plate 1,proc

@@ -1,0 +1,15 @@
+Add acetic acid (ul) to vials in Plate 1
+Add Methanol (ul) to vials in Plate 1
+Add ethanol (ul) to vials in Plate 1
+Add propanol (ul) to vials in Plate 1
+Add glycerol (ul) to vials in Plate 1
+Add sulfuric acid (ul) to vials in Plate 1
+Add Water (ul) to vials in Plate 1
+Set Cap in vials in Plate 1
+Set HeatingTemp in vials in Plate 2
+Set VialTimers in vials in Plate 1
+Set StirRate in Plate 2
+Uniform transfer from Plate 1 to Plate 2
+Uniform transfer from Plate 2 to Plate 1
+Set StirRate in Plate 2
+Set HeatingTemp in vials in Plate 2

@@ -1,0 +1,6 @@
+Add naphthalene (mg) to Plate 1
+Add methanol (ul) to Plate 1
+Set Cap in Plate 1
+Set VortexRate to 500 in Plate 1
+Set Delay to 10 min in Plate 1
+Set VortexRate to 0 in Plate 1
