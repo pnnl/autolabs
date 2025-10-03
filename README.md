@@ -7,6 +7,9 @@
 
 AutoLabs is a Streamlit-based application for designing, simulating, and evaluating laboratory experiments using AI-powered agents and tagging systems. It supports multi-agent and single-agent workflows, experiment step tagging, and evaluation management.
 
+Manuscript: [AutoLabs: Cognitive Multi-Agent Systems with Self-Correction for
+Autonomous Chemical Experimentation](https://arxiv.org/abs/2509.25651)
+
 ## Features
 - Interactive experiment design via chat and forms
 - Multi-agent and single-agent graph options
